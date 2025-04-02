@@ -1,0 +1,42 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+  }
+  body{
+    background-color: #06192e;
+
+
+  }
+
+  .container, section, header {
+    background-color: #06192e;
+  }
+
+  .container, section, header, .carousel, .carousel-inner, .carousel-item {
+    background-color: #06192e;
+  }
+  
+  footer {
+    background-color: #06192e;
+  }
+  
+  .card img {
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .carousel img {
+    height: 800px;
+    object-fit: cover;
+  }
+  .carousel-caption {
+    top: 20%;
+  }
+  .carousel-caption.black-text p, 
+.carousel-caption.black-text h5 {
+  color: black !important;
+}
+
+  footer {
+    background-color: #f8f9fa;
+  }
+  

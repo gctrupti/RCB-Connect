@@ -1,0 +1,285 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RCB Player Showcase</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+      h1 {
+      margin-top: -15px;
+    }
+    h2{
+      margin-top: -10px;
+    }
+          body {
+      background-color: #06192e;
+      color: white;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .container, section {
+      background-color: #06192e;
+    }
+    footer {
+      margin-top: auto;
+    }
+        .card:hover {
+          transform: scale(1.05);
+          transition: transform 0.3s ease;
+          box-shadow: 0 8px 16px rgba(12, 2, 2, 0.305);
+        }
+        table {
+      background-color: #0a2a4e;
+      color: white;
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      border: 2px solid white;
+      transition: all 0.3s ease;
+    }
+    th, td {
+      border: 1px solid white;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #0d3a6e;
+    }
+    tr:nth-child(even) {
+      background-color: #09223d;
+    }
+    tr:hover {
+      background-color: #123b63;
+      transform: scale(1.0);
+    }
+    .card:hover {
+      transform: scale(1.05);
+      transition: transform 0.2s ease;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .carousel-inner img {
+      max-height: 600px;
+      object-fit: cover;
+    }
+    
+    </style>
+  </head>
+
+  <body style="background-color: #06192e; color: white;">
+    <body>
+     
+
+    <!-- Header Section -->
+    
+    <header class="text-center mb-4" style="background-color: #761616d2; padding: 25px; position: relative;">
+      <h1><b>RCB Player Card Showcase</b></h1>
+      <!-- navbar -->
+      <ul class="nav justify-content-center" style="color: white; font-size: 18px; font-weight: bold; margin-top: 40px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#home" style="color: white; margin: 0 20px;">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#players" style="color: white; margin: 0 20px;">TEAM</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#matches" style="color: white; margin: 0 20px;">UPCOMING MATCHES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#historic" style="color: white; margin: 0 20px;">HISTORIC MOMENTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#fanwall" style="color: white; margin: 0 20px;">FAN WALL</a>
+        </li>
+      </ul>
+
+      
+      <!-- <h2><br/><b>Celebrating the legacy of Royal Challengers Bangaluru</b></h2> -->
+    </header>
+    <section id="home">
+    <header class="text-center mb-4">
+        <img src="images/logo1.png" alt="RCB Logo" style="width: 100px; max-height: max-content; position: absolute; top: 30px; left: 20px;" />
+        <img src="images/group.png" alt="RCB Team" style="width: 90%; max-height: 600px; object-fit: cover;" />
+    </header>    
+  </section>
+  
+    <!-- Player Card Section -->
+    <section  id="players"class="container my-5">
+      <h2 class="text-center mb-4">Meet the Players</h2>
+      <div class="row" id="player-cards">
+        <!-- Player Cards will be generated here using JavaScript -->
+      </div>
+    </section>
+
+   <!-- Upcoming Matches Section -->
+   <section id="matches"class="container mt-5">
+    <h2 class="text-center mb-4">Upcoming Matches</h2>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Opponent</th>
+          <th>Venue</th>
+          <th>Time (IST)</th>
+        </tr>
+      </thead>
+      <tbody id="matches-table"></tbody>
+    </table>
+  </section>
+
+  
+    <!-- Historic Moments Carousel Section -->
+  <section  id="historic"class="container mt-5">
+    <h2 class="text-center mb-4">Historic Moments of RCB</h2>
+    <div id="historicCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
+      <div class="carousel-inner" id="carousel-inner"></div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#historicCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#historicCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <script>
+    const historicMoments = [
+      { year: 2011, description: "RCB reached the IPL Final led by Daniel Vettori, finishing as runners-up.", image: "images/2011.jpg" },
+      { year: 2013, description: "Chris Gayle smashed a record-breaking 175* against Pune Warriors India.", image: "images/2013.jpg" },
+      { year: 2016, description: "Virat Kohli scored 973 runs in a single IPL season, setting a new record.", image: "images/2016vk.png" },
+      { year: 2016, description: "RCB reached the IPL Final, finishing as runners-up under Kohli's captaincy.", image: "images/2016c.avif" },
+      { year: 2024, description: "RCB qualified for the playoffs , showcasing a strong performance.", image: "images/2024.webp", customStyle: "black-text" },
+      // { year: 2023, description: "RCB Women's team launched, participating in the inaugural WPL season.", image: "images/2023_wpl.jpg" }
+    ];
+
+    function displayHistoricMoments() {
+      const carouselInner = document.getElementById("carousel-inner");
+
+      historicMoments.forEach((moment, index) => {
+        // carouselInner.innerHTML += `
+          carouselInner.innerHTML += `
+  <div class="carousel-item ${index === 0 ? 'active' : ''}">
+    <img src="${moment.image}" class="d-block w-100" alt="${moment.year}" style="height: 700px; object-fit: cover;">
+    <div class="carousel-caption d-none d-md-block" style="font-weight: bold; font-size:20px; text-decoration:hover; position: absolute; top: -4%; text-align: center; ${moment.year === 2024 ? 'color: white;' : 'color: white;'}">
+      <h5>${moment.year}</h5>
+      <p>${moment.description}</p>
+    </div>
+  </div>
+`;
+
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", displayHistoricMoments);
+  </script>
+  
+   <!-- Fan Wall Section with Carousel -->
+   <section id="fanwall"class="container mt-5">
+    <h2 class="text-center mb-4">Fan Wall</h2>
+    <div id="fanCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/f1.jpg" class="d-block w-100" alt="Fan 1">
+        </div>
+        <div class="carousel-item">
+          <img src="images/f2.jpeg" class="d-block w-100" alt="Fan 2">
+        </div>
+        <div class="carousel-item">
+          <img src="images/f3.jpg" class="d-block w-100" alt="Fan 3">
+        </div>
+        <div class="carousel-item">
+          <img src="images/f4.webp" class="d-block w-100" alt="Fan 4">
+        </div>
+        <div class="carousel-item">
+          <img src="images/f5.jpg_large" class="d-block w-100" alt="Fan 5">
+        </div>
+        <div class="carousel-item">
+          <img src="images/f6.webp" class="d-block w-100" alt="Fan 6">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#fanCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#fanCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+   <!-- Footer Section -->
+   <footer class="text-center py-3" style="background-color:#06192e; color: white;">
+    <p>© 2025 RCB Showcase. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const upcomingMatches = [
+      { date: "April 2, 2025", opponent: "Gujarat Titans", venue: "M. Chinnaswamy Stadium, Bengaluru", time: "7:30 PM" },
+      { date: "April 7, 2025", opponent: "Mumbai Indians", venue: "Wankhede Stadium, Mumbai", time: "7:30 PM" },
+      { date: "April 10, 2025", opponent: "Delhi Capitals", venue: "M. Chinnaswamy Stadium, Bengaluru", time: "7:30 PM" },
+      { date: "April 13, 2025", opponent: "Rajasthan Royals", venue: "Sawai Mansingh Stadium, Jaipur", time: "3:30 PM" },
+      { date: "April 18, 2025", opponent: "Punjab Kings", venue: "M. Chinnaswamy Stadium, Bengaluru", time: "7:30 PM" }
+    ];
+
+    function displayUpcomingMatches() {
+      const tableBody = document.getElementById('matches-table');
+      upcomingMatches.forEach(match => {
+        const row = `<tr>
+          <td>${match.date}</td>
+          <td>${match.opponent}</td>
+          <td>${match.venue}</td>
+          <td>${match.time}</td>
+        </tr>`;
+        tableBody.innerHTML += row;
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      displayUpcomingMatches();
+      document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function() {
+      document.querySelectorAll('.nav-link').forEach(nav => nav.style.color = 'white');
+      this.style.color = '#f7dc6f'; // Light yellow
+    });
+  });
+    });
+  </script>
+  <style>
+     header.fixed-top {
+    width: 100%;
+    z-index: 1030;
+    background-color: rgba(0, 0, 0, 0.9);
+     }
+
+  
+    .navbar.fixed-top {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1030;
+    }
+  </style>
+  
+   
+  
+
+
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+ 
+
+  
+  
